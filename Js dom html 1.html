@@ -1,0 +1,369 @@
+<!--ChatGPT Examples-->
+<!--1. What is the DOM?-->
+<!--2. DOM Nodes-->
+<!--3. Accessing DOM Elements-->
+<!--4. Manipulating DOM Elements-->
+<!--5. Creating & Removing Elements-->
+<!--6. Traversing the DOM-->
+<!--7. Event Handling-->
+<!--8. Event Bubbling and Capturing-->
+<!--9. JSON & DOM-->
+
+<!---------------------------1. What is the DOM?----------------------------->
+<!--Theory: DOM (Document Object Model) is a programming interface for web documents.-->
+<!--It represents the structure of an HTML page as a tree of objects (nodes) that JavaScript can access and manipulate.-->
+
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--  <body>-->
+<!--    <h1 id="title">Hello, World!</h1>-->
+<!--    <p>Welcome to the DOM tutorial.</p>-->
+<!--  </body>-->
+<!--</html>-->
+
+
+<!--Example 2: DOM structure (Tree):-->
+<!--Document-->
+<!-- └── html-->
+<!--      └── body-->
+<!--           ├── h1 (id="title")-->
+<!--           └── p-->
+
+
+<!-----------------------------2. DOM Nodes----------------------------->
+<!--Every element in HTML is a node in the DOM tree.-->
+<!--Element Node	- <p> -	Represents HTML elements-->
+<!--Text Node	- "Hello" -	Represents the text inside elements-->
+<!--Attribute Node -	id="title" -	Represents attributes-->
+<!--Comment Node - 	<!-- comment --> 	<!--Represents comments-->
+
+<!-----------------------------3. Accessing DOM Elements----------------------------->
+<!--By ID-->
+<!--document.getElementById("title");-->
+
+<!--By Class-->
+<!--document.getElementsByClassName("myClass");-->
+
+<!--By Tag-->
+<!--document.getElementsByTagName("p");-->
+
+<!--Using Query Selector-->
+<!--document.querySelector("p"); // first <p>-->
+<!--document.querySelectorAll("p"); // all <p>-->
+
+
+<!-------------------------------4. Manipulating DOM Elements----------------------------->
+<!--Change Text-->
+<!--document.getElementById("title").textContent = "Welcome to JavaScript!";-->
+
+<!--Change HTML-->
+<!--document.getElementById("title").innerHTML = "<em>Updated Title</em>";-->
+
+<!--Change Style-->
+<!--document.getElementById("title").style.color = "blue";-->
+
+<!--Change Attribute-->
+<!--document.getElementById("title").setAttribute("class", "heading");-->
+
+
+<!-------------------------------5. Creating & Removing Elements----------------------------->
+<!--Create Element-->
+<!--let newPara = document.createElement("p");-->
+<!--newPara.textContent = "This is a new paragraph.";-->
+<!--document.body.appendChild(newPara);-->
+
+<!--Remove Element-->
+<!--let element = document.getElementById("title");-->
+<!--element.remove();-->
+
+
+<!-------------------------------6. Traversing the DOM----------------------------->
+<!--let parent = document.getElementById("title").parentElement;-->
+<!--let children = document.body.children;-->
+<!--let firstChild = document.body.firstElementChild;-->
+<!--let lastChild = document.body.lastElementChild;-->
+
+
+<!-------------------------------7. Event Handling----------------------------->
+<!--Theory:-->
+<!--Events let you make web pages interactive.-->
+<!--Common events:-->
+<!--click-->
+<!--mouseover-->
+<!--keydown-->
+<!--submit-->
+<!--change-->
+
+
+<!--Example:-->
+<!--<button id="btn">Click Me</button>-->
+
+<!--<script>-->
+<!--document.getElementById("btn").addEventListener("click", function() {-->
+<!--  alert("Button clicked!");-->
+<!--});-->
+<!--</script>-->
+
+
+<!-------------------------------8. Event Bubbling and Capturing----------------------------->
+<!--Theory:-->
+<!--When an event happens (like a click), it travels:-->
+<!--Bubbling: from child → parent (default)-->
+<!--Capturing: from parent → child-->
+<!--You can control this by passing true or false in addEventListener.-->
+
+<!--Example 1:-->
+<!--element.addEventListener("click", handler, true); // capturing-->
+<!--element.addEventListener("click", handler, false); // bubbling-->
+
+
+<!-------------------------------9. JSON & DOM----------------------------->
+<!--Theory: You often use JSON data to update DOM dynamically:-->
+
+<!--Example 1:-->
+<!--let user = { name: "Ravi", city: "Chennai" };-->
+<!--document.getElementById("info").textContent = `${user.name} from ${user.city}`;-->
+
+
+
+<!--------------------------------------------------------------------------------------------->
+<!-----------------------------Geeks for Geeks ----------------------------->
+
+<!--Example 1:-->
+<!--<html>-->
+<!--<body>-->
+<!--    <h2>GeeksforGeeks</h2>-->
+     <!--Finding the HTML Elements by their Id in DOM -->
+<!--    <p id="intro">-->
+<!--        A Computer Science portal for geeks.-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        This example illustrates the <b>getElementById</b> method.-->
+<!--    </p>-->
+<!--    <p id="demo"></p>-->
+<!--    <script>-->
+<!--        const element = document.getElementById("intro");-->
+<!--        document.getElementById("demo").innerHTML =-->
+<!--            "GeeksforGeeks introduction is: " + element.innerHTML;-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 2:-->
+<!--<table>-->
+<!--    <ROWS>-->
+<!--        <tr>-->
+<!--            <td>Car</td>-->
+<!--            <td>Scooter</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>MotorBike</td>-->
+<!--            <td>Bus</td>-->
+<!--        </tr>-->
+<!--    </ROWS>-->
+<!--</table>-->
+
+
+<!--Example 3:-->
+<!--<html>-->
+<!--<head></head>-->
+<!--<body>-->
+<!--    <label>Enter Value 1: </label>-->
+<!--    <input type="text" id="val1" />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <label>Enter Value 2: </label>-->
+<!--    <input type="text" id="val2" />-->
+<!--    <br />-->
+<!--    <button onclick="getAdd()">Click To Add</button>-->
+<!--    <p id="result">Hello World</p>-->
+<!--    <script type="text/javascript">-->
+<!--        function getAdd() {-->
+            <!--// Fetch the value of input with id val1-->
+<!--            const num1 = Number(document.getElementById("val1").value);-->
+            <!--// Fetch the value of input with id val2-->
+<!--            const num2 = Number(document.getElementById("val2").value);-->
+<!--            const add = num1 + num2;-->
+<!--            console.log(add);-->
+            <!--// Displays the result in paragraph using dom-->
+<!--            document.getElementById("result").innerHTML = "Addition : " + add;-->
+            <!--// Changes the color of paragraph tag with red-->
+<!--            document.getElementById("result").style.color = "red";-->
+<!--        }-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!---------------------------------Using getElementById----------------------------->
+<!--syntax: document.getElementById('id')-->
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, -->
+<!--                   initial-scale=1.0">-->
+<!--    <title>getElementById Example</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <h1 id="gfg">GeeksForGeeks</h1>-->
+
+<!--    <script>-->
+        <!--// styling the h1 tag-->
+<!--        const element = document.getElementById('gfg');-->
+<!--        element.style.color = "green";-->
+<!--        element.style.textAlign = "center";-->
+<!--        element.style.margin = "30px";-->
+<!--        element.style.fontSize = "30px";-->
+
+
+<!--    </script>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+<!-----------------------------------Using getElementsByClassName----------------------------->
+<!--syntax: document.getElementsByClassName('class')-->
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+  
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" -->
+<!--          content="width=device-width, initial-scale=1.0">-->
+<!--    <title>getElementsByClassName Example</title>-->
+<!--</head>-->
+  
+<!--<body>-->
+<!--    <h1 class="selector">GeeksForGeeks</h1>-->
+<!--    <h2 class="selector">DOM selector in JavaScript</h2>-->
+
+<!--    <script>-->
+<!--        const elements = document.getElementsByClassName('selector');-->
+<!--        elements[0].style.color = "green";-->
+<!--        elements[1].style.color = "red";-->
+<!--        elements[0].style.textAlign = "center";-->
+<!--        elements[1].style.textAlign = "center";-->
+<!--        elements[0].style.marginTop = "60px";-->
+<!--    </script>-->
+<!--</body>-->
+  
+<!--</html>-->
+
+
+
+
+<!-----------------------------------Using getElementsByTagName----------------------------->
+<!--syntax: document.getElementsByTagName('tag')-->
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+  
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" -->
+<!--          content="width=device-width, initial-scale=1.0">-->
+<!--    <title>getElementsByTagName Example</title>-->
+<!--</head>-->
+  
+<!--<body>-->
+<!--    <p>Thanks for visiting GFG</p>-->
+<!--    <p>This is showing how to select DOM element using tag name</p>-->
+
+<!--    <script>-->
+<!--        const paragraphs = document.getElementsByTagName('p');-->
+<!--        paragraphs[0].style.color = "green";-->
+<!--        paragraphs[1].style.color = "blue";-->
+<!--        paragraphs[0].style.fontSize = "25px";-->
+<!--        paragraphs[0].style.textAlign = "center";-->
+<!--        paragraphs[1].style.textAlign = "center";-->
+<!--        paragraphs[0].style.marginTop = "60px";-->
+<!--        const bg = document.getElementsByTagName('body');-->
+<!--        bg[0].style.background = "linear-gradient(to right, orange, white, green)";-->
+<!--    </script>-->
+<!--</body>-->
+  
+<!--</html>-->
+
+<!-----------------------------------Using querySelector----------------------------->
+<!--syntax: document.querySelector('selector')-->
+
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+  
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" -->
+<!--          content="width=device-width,-->
+<!--                   initial-scale=1.0">-->
+<!--    <title>querySelector Example</title>-->
+<!--</head>-->
+  
+<!--<body>-->
+<!--    <div class="gfg">GeeksForGeeks</div>-->
+
+<!--    <script>-->
+<!--        const element = document.querySelector('.gfg');-->
+<!--        element.style.color = "green";-->
+<!--        element.style.textAlign = "center";-->
+<!--        element.style.margin = "30px";-->
+<!--        element.style.fontSize = "30px";-->
+<!--    </script>-->
+<!--</body>-->
+  
+<!--</html>-->
+
+<!-----------------------------------Using querySelectorAll----------------------------->
+<!--syntax: document.querySelectorAll('selector')-->
+
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" -->
+<!--          content="width=device-width, initial-scale=1.0">-->
+<!--    <title>querySelectorAll Example</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <h1 class="selector">GeeksForGeeks</h1>-->
+<!--    <p class="selector">-->
+<!--        This is showing how to select DOM element-->
+<!--        using tag name-->
+<!--    </p>-->
+
+<!--    <script>-->
+<!--        const elements = document.querySelectorAll('.selector');-->
+<!--        elements[0].style.color = "green";-->
+<!--        elements[1].style.color = "red";-->
+<!--        elements[0].style.textAlign = "center";-->
+<!--        elements[1].style.textAlign = "center";-->
+<!--        elements[0].style.marginTop = "60px";-->
+        
+<!--    </script>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+<!--------------------------------End------------------------------------------>
+
+
+
+
+

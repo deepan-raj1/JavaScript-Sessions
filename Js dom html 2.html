@@ -1,0 +1,567 @@
+<!--W3School-->
+<!--DOM INtro-->
+
+
+<!------------------------------------DOM Methods---------------------------------- -->
+
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>My First Page</h2>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--document.getElementById("demo").innerHTML = "Hello World!";-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--------------------------------------DOM Document-------------------------------------->
+
+<!--Finding HTML Elements-->
+<!--document.getElementById(id)	        - Find an element by element id-->
+<!--document.getElementsByTagName(name)	- Find elements by tag name-->
+<!--document.getElementsByClassName(name) -	Find elements by class name-->
+
+<!--Changing HTML Elements-->
+<!--element.innerHTML =  new html content	Change the inner HTML of an element-->
+<!--element.attribute = new value	Change the attribute value of an HTML element-->
+<!--element.style.property = new style	Change the style of an HTML element-->
+<!--element.setAttribute(attribute, value)	Change the attribute value of an HTML element-->
+
+<!--Adding and Deleting Elements-->
+<!--document.createElement(element)	Create an HTML element-->
+<!--document.removeChild(element)	Remove an HTML element-->
+<!--document.appendChild(element)	Add an HTML element-->
+<!--document.replaceChild(new, old)	Replace an HTML element-->
+<!--document.write(text)	Write into the HTML output stream-->
+
+<!--Adding Events Handlers-->
+<!--Method	Description-->
+<!--document.getElementById(id).onclick = function(){code}	Adding event handler code to an onclick event-->
+
+
+
+<!------------------------------------DOM Elements------------------------------------>
+<!--Finding HTML Elements-->
+<!--Finding HTML elements by id-->
+<!--Finding HTML elements by tag name-->
+<!--Finding HTML elements by class name-->
+<!--Finding HTML elements by CSS selectors-->
+<!--Finding HTML elements by HTML object collections-->
+
+<!--Example 1: Finding HTML Element by Id-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+
+<!--<p id="intro">Finding HTML Elements by Id</p>-->
+<!--<p>This example demonstrates the <b>getElementsById</b> method.</p>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--const element = document.getElementById("intro");-->
+
+<!--document.getElementById("demo").innerHTML = -->
+<!--"The text from the intro paragraph is: " + element.innerHTML;-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--Example 2: Finding HTML Elements by Tag Name-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+
+<!--<p>Finding HTML Elements by Tag Name.</p>-->
+<!--<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--const element = document.getElementsByTagName("p");-->
+
+<!--document.getElementById("demo").innerHTML = 'The text in first paragraph (index 0) is: ' + element[0].innerHTML;-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 3: Finding HTML Elements by Tag Name-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+
+<!--<div id="main">-->
+<!--<p>Finding HTML Elements by Tag Name</p>-->
+<!--<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>-->
+<!--</div>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--const x = document.getElementById("main");-->
+<!--const y = x.getElementsByTagName("p");-->
+
+<!--document.getElementById("demo").innerHTML = -->
+<!--'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 4: Finding HTML Elements by Class Name-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+
+<!--<p>Finding HTML Elements by Class Name.</p>-->
+<!--<p class="intro">Hello World!</p>-->
+<!--<p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--const x = document.getElementsByClassName("intro");-->
+<!--document.getElementById("demo").innerHTML = -->
+<!--'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 5: Finding HTML Elements by CSS Selectors-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+
+<!--<p>Finding HTML Elements by Query Selector</p>-->
+<!--<p class="intro">Hello World!.</p>-->
+<!--<p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--const x = document.querySelectorAll("p.intro");-->
+<!--document.getElementById("demo").innerHTML = -->
+<!--'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 6: Finding HTML Elements by HTML Object Collections-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+<!--<p>Finding HTML Elements Using <b>document.forms</b>.</p>-->
+
+<!--<form id="frm1" action="/action_page.php">-->
+<!--  First name: <input type="text" name="fname" value="Donald"><br>-->
+<!--  Last name: <input type="text" name="lname" value="Duck"><br><br>-->
+<!--  <input type="submit" value="Submit">-->
+<!--</form> -->
+
+<!--<p>These are the values of each element in the form:</p>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--const x = document.forms["frm1"];-->
+<!--let text = "";-->
+<!--for (let i = 0; i < x.length ;i++) {-->
+<!--  text += x.elements[i].value + "<br>";-->
+<!--}-->
+<!--document.getElementById("demo").innerHTML = text;-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!----------------------------------DOM CHANGING HTML------------------------------------>
+<!--Changing HTML Content-->
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript can Change HTML</h2>-->
+
+<!--<p id="p1">Hello World!</p>-->
+
+<!--<script>-->
+<!--document.getElementById("p1").innerHTML = "New text!";-->
+<!--</script>-->
+
+<!--<p>The paragraph above was changed by a script.</p>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 2: -->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h1 id="id01">Old Heading</h1>-->
+
+<!--<script>-->
+<!--const element = document.getElementById("id01");-->
+<!--element.innerHTML = "New Heading";-->
+<!--</script>-->
+
+<!--<p>JavaScript changed "Old Heading" to "New Heading".</p>-->
+
+<!--</body>-->
+<!--</html> -->
+
+
+
+
+<!--Changing the Value of an Attribute-->
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<img id="myImage" src="smiley.gif">-->
+
+<!--<script>-->
+<!--document.getElementById("myImage").src = "landscape.jpg";-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--Dynamic HTML content-->
+<!--Example 1: --> 
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--document.getElementById("demo").innerHTML = "Date : " + Date();-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html> -->
+
+
+<!--document.write()-->
+<!--Example 1: -->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<p>Bla bla bla</p>-->
+
+<!--<script>-->
+<!--document.write(Date());-->
+<!--</script>-->
+
+<!--<p>Bla bla bla</p>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!------------------------------------DOM Forms------------------------------------>
+<!--JavaScript Form Validation-->
+
+<!--Example 1:JavaScript Example-->
+<!--function validateForm() {-->
+<!--  let x = document.forms["myForm"]["fname"].value;-->
+<!--  if (x == "") {-->
+<!--    alert("Name must be filled out");-->
+<!--    return false;-->
+<!--  }-->
+<!--}-->
+
+
+<!--Example 2: HTML Form Example-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<script>-->
+<!--function validateForm() {-->
+<!--  let x = document.forms["myForm"]["fname"].value;-->
+<!--  if (x == "") {-->
+<!--    alert("Name must be filled out");-->
+<!--    return false;-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>JavaScript Validation</h2>-->
+
+<!--<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">-->
+<!--  Name: <input type="text" name="fname">-->
+<!--  <input type="submit" value="Submit">-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+<!--Example 3: JavaScript Can Validate Numeric Input-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript Validation</h2>-->
+
+<!--<p>Please input a number between 1 and 10:</p>-->
+
+<!--<input id="numb">-->
+
+<!--<button type="button" onclick="myFunction()">Submit</button>-->
+
+<!--<p id="demo"></p>-->
+
+<!--<script>-->
+<!--function myFunction() {-->
+<!--  // Get the value of the input field with id="numb"-->
+<!--  let x = document.getElementById("numb").value;-->
+<!--  // If x is Not a Number or less than one or greater than 10-->
+<!--  let text;-->
+<!--  if (isNaN(x) || x < 1 || x > 10) {-->
+<!--    text = "Input not valid";-->
+<!--  } else {-->
+<!--    text = "Input OK";-->
+<!--  }-->
+<!--  document.getElementById("demo").innerHTML = text;-->
+<!--}-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html> -->
+
+
+<!--Example - Automatic HTML Form Validation:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript Validation</h2>-->
+
+<!--<form action="/action_page.php" method="post">-->
+<!--  <input type="text" name="fname" required>-->
+<!--  <input type="submit" value="Submit">-->
+<!--</form>-->
+
+<!--<p>If you click submit, without filling out the text field,-->
+<!--your browser will display an error message.</p>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!------------------------------------DOM CHANGING CSS------------------------------------>
+<!--Example 1:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h2>JavaScript HTML DOM</h2>-->
+<!--<p>Changing the HTML style:</p>-->
+
+
+<!--<p id="p1">Hello World!</p>-->
+<!--<p id="p2">Hello World!</p>-->
+
+<!--<script>-->
+<!--document.getElementById("p2").style.color = "blue";-->
+<!--document.getElementById("p2").style.fontFamily = "Arial";-->
+<!--document.getElementById("p2").style.fontSize = "larger";-->
+<!--</script>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 2-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h1 id="id1">My Heading 1</h1>-->
+
+<!--<button type="button" -->
+<!--onclick="document.getElementById('id1').style.color = 'red'">-->
+<!--Click Me!</button>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 3:-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<p id="p1">-->
+<!--This is a text.-->
+<!--This is a text.-->
+<!--This is a text.-->
+<!--This is a text.-->
+<!--</p>-->
+
+<!--<input type="button" value="Hide text" onclick="document.getElementById('p1').style.visibility='hidden'">-->
+<!--<input type="button" value="Show text" onclick="document.getElementById('p1').style.visibility='visible'">-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!------------------------------------DOM Animations------------------------------------>
+<!--Example 1:A Basic Web Page-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<h1>My First JavaScript Animation</h1>-->
+
+<!--<div id="animation">My animation will go here</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 2:Create an Animation Container-->
+<!--<div id ="container">-->
+<!--  <div id ="animate">My animation will go here</div>-->
+<!--</div>-->
+
+<!--Example 3: Style the Elements -->
+<!--<!Doctype html>-->
+<!--<html>-->
+<!--<style>-->
+<!--#container {-->
+<!--  width: 400px;-->
+<!--  height: 400px;-->
+<!--  position: relative;-->
+<!--  background: yellow;-->
+<!--}-->
+<!--#animate {-->
+<!--  width: 50px;-->
+<!--  height: 50px;-->
+<!--  position: absolute;-->
+<!--  background: red;-->
+<!--}-->
+<!--</style>-->
+<!--<body>-->
+
+<!--<h2>My First JavaScript Animation</h2>-->
+
+<!--<div id="container">-->
+<!--<div id="animate"></div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--Example 4 Animation Code -->
+<!--id = setInterval(frame, 5);-->
+
+<!--function frame() {-->
+<!--  if (/* test for finished */) {-->
+<!--    clearInterval(id);-->
+<!--  } else {-->
+<!--    /* code to change the element style */ -->
+<!--  }-->
+<!--}-->
+
+
+<!--Example 5 : Create the Full Animation Using JavaScript-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<style>-->
+<!--#container {-->
+<!--  width: 400px;-->
+<!--  height: 400px;-->
+<!--  position: relative;-->
+<!--  background: yellow;-->
+<!--}-->
+<!--#animate {-->
+<!--  width: 50px;-->
+<!--  height: 50px;-->
+<!--  position: absolute;-->
+<!--  background-color: red;-->
+<!--}-->
+<!--</style>-->
+<!--<body>-->
+
+<!--<p><button onclick="myMove()">Click Me</button></p> -->
+
+<!--<div id ="container">-->
+<!--  <div id ="animate"></div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--function myMove() {-->
+<!--  let id = null;-->
+<!--  const elem = document.getElementById("animate");   -->
+<!--  let pos = 0;-->
+<!--  clearInterval(id);-->
+<!--  id = setInterval(frame, 5);-->
+<!--  function frame() {-->
+<!--    if (pos == 350) {-->
+<!--      clearInterval(id);-->
+<!--    } else {-->
+<!--      pos++; -->
+<!--      elem.style.top = pos + "px"; -->
+<!--      elem.style.left = pos + "px"; -->
+<!--    }-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
